@@ -826,6 +826,17 @@ abstract class REST_Controller extends \CI_Controller {
         // Output the data
         $this->output->set_output($output);
 
+        /**
+         * Modified by  : Lapoleon 
+         * Date         : 20200510
+         * Desc         : Using authentication is not working at all
+         * Refrence     : https://stackoverflow.com/questions/41965609/codeigniter-rest-api-keys-not-working
+         */
+        //start modified
+        $this->output->_display();
+        exit;
+        //end modified
+
         ob_end_flush();
 
         // Otherwise dump the output automatically
